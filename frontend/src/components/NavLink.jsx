@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
-export default function NavLink(){
+export default function NavLink({name}){
     return (
         <li className='nav-link'>
-            <Link to={'/'}>TEST</Link>
+            <Link to={'/'}>{name}</Link>
         </li>
     )
 }

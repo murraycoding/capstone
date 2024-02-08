@@ -17,7 +17,11 @@ export default function App() {
       <header>
       <h1>This is the header of the app.</h1>
       <ul id="nav-bar">
-        <NavLink />
+        <NavLink name={'home'}/>
+        <NavLink name={'about'}/>
+        <NavLink name={'projects'}/>
+        <NavLink name={'tasks'}/>
+        <NavLink name={'login'}/>
       </ul>
 
       </header>
