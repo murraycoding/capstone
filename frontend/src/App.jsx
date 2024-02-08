@@ -5,6 +5,8 @@ import { Outlet } from 'react-router-dom';
 
 // components imports
 import NavLink from './components/NavLink';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 // style imports
 import './App.css'
@@ -15,7 +17,7 @@ export default function App() {
   return (
     <>
       <header>
-      <h1>This is the header of the app.</h1>
+      <Header />
       <ul id="nav-bar">
         <NavLink name={'home'}/>
         <NavLink name={'about'}/>
@@ -27,7 +29,7 @@ export default function App() {
       </header>
 
       <Outlet />
-      <p>This is the footer of the app</p>
+      <Footer />
 
     </>
   )
