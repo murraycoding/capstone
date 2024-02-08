@@ -19,11 +19,11 @@ export default function App() {
       <header>
       <Header />
       <ul id="nav-bar">
-        <NavLink name={'home'}/>
-        <NavLink name={'about'}/>
-        <NavLink name={'projects'}/>
-        <NavLink name={'tasks'}/>
-        <NavLink name={'login'}/>
+        <NavLink name={'home'} path=""/>
+        <NavLink name={'about'} path="about"/>
+        <NavLink name={'projects'} path="projects"/>
+        <NavLink name={'tasks'} path="tasks"/>
+        <NavLink name={'login'} path="login"/>
       </ul>
 
       </header>

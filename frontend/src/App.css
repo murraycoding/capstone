@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
 
+/* General Styles */
+
 :root {
     /* Color values from TDS */
     --bright-red: #f50002;
@@ -27,6 +29,67 @@ h1, h2, h3 {
     font-family: 'IBM Plex Sans', 'Times New Roman', Times, serif;
     font-weight: 500;
     letter-spacing: 0.1rem;
+}
+
+/* Special Button */
+button {
+    padding-block: 1px;
+    padding-inline: 6px;
+}
+
+.primary-button {
+    /* General Styles */
+    border-radius: 0.1875rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.33334;
+    letter-spacing: .0625rem;
+    min-width: 11.25rem;
+    padding: 0.5625rem 1.6875rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: none;
+    border:none;
+    transform: scale(1);
+    box-sizing: border-box;
+    border: 0.1875rem solid transparent;
+    margin:  0.5625rem 1.6875rem;
+    font-family:'IBM Plex Sans', 'Times New Roman', Times, serif;
+
+    /* Transform Styles */
+    transition-property: background-color, transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+
+    
+    /* Button Colors */
+    background-color: var(--red);
+    color: var(--white);
+
+    &:hover {
+        background-color: var(--dark-red);
+        transform: scale(1.02);
+    }
+
+    &:focus {
+        border-color: var(--focus-color);
+    }
+}
+
+/* Header Styles */
+
+#page-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#top-image {
+    height: 2rem;
+    padding: 0px 1.5rem;
 }
 
 #nav-bar {
@@ -81,6 +144,71 @@ header {
     box-shadow: 0px 10px 10px lightgray;
 }
 
+#header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#subtitle {
+    color: lightgrey;
+    font-style: italic;
+}
+
+
+
+/* Project Card */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid grey;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 0.4rem;
+    background-color: lightgray;
+    align-items: center;
+    min-width: 300px;
+    width: calc(30% - 30px);
+    max-width: 500px;
+
+    & ul {
+        list-style-type: none;
+        margin:0px;
+        padding: 0px;
+        align-items: left;
+
+        & li {
+            padding: 3px 0px;
+        }
+    }
+
+    & h3 {
+        font-size: x-large;
+        padding: 0px;
+        margin: 0px 0px 10px 0px;
+        
+    }
+
+    & a {
+        color: var(--white);
+        text-decoration: none;
+    }
+}
+
+#project-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+
+
+/* Footer Styles */
+
 footer {
     position: fixed;
     bottom: 0px;
@@ -95,7 +223,11 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    box-shadow: -10px 0px 5px lightslategray;
+    box-shadow: 0px -10px 10px lightgrey;
+
+    & a {
+        color: var(--white)
+    }
 }
 
 #email {
@@ -103,14 +235,3 @@ footer {
     cursor: pointer;
 }
 
-#page-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#top-image {
-    height: 2rem;
-    padding: 0px 1.5rem;
-}
