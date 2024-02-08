@@ -23,6 +23,7 @@ export default function App() {
         <NavLink name={'about'} path="about"/>
         <NavLink name={'projects'} path="projects"/>
         <NavLink name={'tasks'} path="tasks"/>
+        <NavLink name={'people'} path="people" />
         <NavLink name={'login'} path="login"/>
       </ul>
 

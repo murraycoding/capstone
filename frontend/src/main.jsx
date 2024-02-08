@@ -12,6 +12,7 @@ import LoginPage from './pages/LoginPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import TasksPage from './pages/TasksPage.jsx';
 import TaskPage from './pages/TaskPage.jsx';
+import PeoplePage from './pages/PeoplePage.jsx';
 
 // component imports
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/task/:taskId",
         element: <TaskPage />
+      },
+      {
+        path: "/people",
+        element: <PeoplePage />
       }
     ]
   }

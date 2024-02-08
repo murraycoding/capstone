@@ -14,6 +14,8 @@
     --link-color: #007395;
     --link-accent-color: #003557;
     --focus-color: rgba(0,145,235, 0.4);
+
+    --idCard-multiplier: 4;
 }
 
 body {
@@ -204,7 +206,86 @@ header {
     justify-content: space-around;
 }
 
+/* person Styles */
+.person-card {
+    height: calc(84px * var(--idCard-multiplier));
+    width: calc(54px * var(--idCard-multiplier));
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px grey;
+    transform: rotateX(0deg);
+    transition: transform 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
 
+    &:hover {
+        transform-origin: top center;
+        transform: rotateX(30deg);
+        box-shadow: 5px 40px 15px grey;
+        cursor: pointer;
+    }
+
+
+    & .card-hole {
+        width: calc(14px * var(--idCard-multiplier));
+        height: calc(3px * var(--idCard-multiplier));
+        border-radius: calc(1.5px * var(--idCard-multiplier));
+        box-shadow: 5px 5px 5px inset grey;
+        position: relative;
+        top: calc(4px * var(--idCard-multiplier));
+        border: 1px solid grey;
+
+    }
+
+    & .card-logo {
+        height: calc(17px * var(--idCard-multiplier));
+        width: calc(42px * var(--idCard-multiplier));
+        position: relative;
+        top: calc(4px * var(--idCard-multiplier));
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    & .picture-box {
+        width: calc(37px * var(--idCard-multiplier));
+        height: calc(46px * var(--idCard-multiplier));
+        border: calc(1px * var(--idCard-multiplier) - 0.5px) solid var(--red);
+        box-sizing: content-box;
+    }
+
+    & .bottom-panel {
+        height: calc(22px * var(--idCard-multiplier));
+        width: 100%;
+        background-color: var(--red);
+        color: white;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 0px 0px 10px 10px;
+
+        & p {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            font-size: calc(0.35rem * var(--idCard-multiplier));
+        }
+    }
+}
+
+#people-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 20px;
+}
 
 
 /* Footer Styles */
