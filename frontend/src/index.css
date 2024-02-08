@@ -1,3 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
+
 :root {
- 
+  /* Color values from TDS */
+  --bright-red: #f50002;
+  --red: #e01719;
+  --dark-red: #af1214;
+  --very-dark-red: #5e0a0b;
+  --white: white;
+  --black: #131517;
+  --grey: #46494d;
+  --link-color: #007395;
+  --link-accent-color: #003557;
+  --focus-color: rgba(0,145,235, 0.4);
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'IBM Plex Sans', 'Times New Roman', Times, serif;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+
+button {
+  padding-block: 1px;
+  padding-inline: 6px;
+}
+
+.primary-button {
+  /* General Styles */
+  border-radius: 0.1875rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.33334;
+  letter-spacing: .0625rem;
+  min-width: 11.25rem;
+  padding: 0.5625rem 1.6875rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: none;
+  border:none;
+  transform: scale(1);
+  box-sizing: border-box;
+  border: 0.1875rem solid transparent;
+  margin:  0.5625rem 1.6875rem;
+  font-family:'IBM Plex Sans', 'Times New Roman', Times, serif;
+
+  /* Transform Styles */
+  transition-property: background-color, transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+
+  
+  /* Button Colors */
+  background-color: var(--red);
+  color: var(--white);
+
+  &:hover {
+      background-color: var(--dark-red);
+      transform: scale(1.02);
+  }
+
+  &:focus {
+      border-color: var(--focus-color);
+  }
+}
+
+/* Header Styles */
+
+#page-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#top-image {
+  height: 2rem;
+  padding: 0px 1.5rem;
+}
+
+/* Navigation Styles */
+
+#nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.nav-link {
+  font-size: 1.25rem;
+  padding: 0.5625rem 1.6875rem;
+  max-width: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5px;
+  color: var(--black);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'IBM Plex Sans', 'Times New Roman', Times, serif;
+
+  & div {
+      background-color: var(--red);
+      height: 3px;
+      width: 80%;
+      transition-property: height, width;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+      position: absolute;
+      bottom: 0px;
+  }
+
+  &:hover {
+      cursor: pointer;
+  
+      & div {
+          width:90%;
+          height: 5px;
+          cursor: pointer;
+      }
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  height: 100px;
+  z-index: 999;
+  background-color: var(--grey);
+  margin: 0px;
+  width: 100%;
+  padding: 20px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: -10px 0px 5px lightslategray ;
+}
+
+#email {
+  text-decoration: underline;
+  cursor: pointer;
 }
