@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-export default function PersonCard(){
+export default function NavLink(){
     return (
-        <li>
+        <li className='nav-link'>
             <Link to={'/'}>TEST</Link>
         </li>
     )
