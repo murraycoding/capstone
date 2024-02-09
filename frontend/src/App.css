@@ -287,6 +287,34 @@ header {
     gap: 20px;
 }
 
+/* Task Styles */
+.task-card {
+    border: 2px solid black;
+    border-radius: 0.1875rem;
+    padding: 0.5rem;
+    min-width: 500px;
+    width: calc(40% - 20px);
+    max-width: 600px;
+}
+
+.task-complete {
+    background-color: green;
+}
+
+.task-not-complete {
+    background-color: lightcoral;
+}
+
+#task-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+
+
 
 /* Footer Styles */
 
