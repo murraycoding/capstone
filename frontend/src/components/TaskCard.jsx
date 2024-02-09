@@ -1,13 +1,13 @@
-export default function TaskCard({projectId, taskId, description, completionStatus, personAssigned,dueDate,estimatedDuration}){
+export default function TaskCard({taskId, description, completionStatus, personAssigned, projectAssigned, dueDate, estimatedComplexity}){
     return (
         <div className="task-card">
-            <p>{description}</p>
-            <p>{completionStatus}</p>
-            <p>{personAssigned}</p>
-            <p>{dueDate}</p>
-            <p>{estimatedDuration}</p>
-            <p>{taskId}</p>
-            <p>{projectId}</p>
+            <p>Task ID {taskId}</p>
+            <p>Description = {description}</p>
+            <p>Completion Status = {completionStatus}</p>
+            <p>Person Assigned = {personAssigned}</p>
+            <p>Project Assigned = {projectAssigned}</p>
+            <p>Due Date = {dueDate}</p>
+            <p>Estimated Complexity = {estimatedComplexity}</p>
         </div>
     )
 }
