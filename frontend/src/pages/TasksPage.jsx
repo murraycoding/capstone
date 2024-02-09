@@ -7,45 +7,15 @@ import TaskCard from '../components/TaskCard'
 
 export default function TasksPage() {
     // state data
-    /*
     const [peopleData, setPeopleData] = useState([])
     const [taskData, setTaskData] = useState([])
     const [projectData, setProjectData] = useState([])
-    */
-
-    /*  Attempt #1 => There were too many rerenders of the page
-    useEffect(() => {
-        const fetchData = async() => {
-            try {
-                const peopleResponse = await fetch('/api/people')
-                const people_data = await peopleResponse.json();
-                
-
-                const taskResponse = await fetch('/api/tasks');
-                const task_data = await taskResponse.json();
-                
-
-                const projectResponse = await fetch('/api/projects')
-                const project_data = await projectResponse.json()
-
-                setTaskData(task_data)
-                setPeopleData(people_data)
-                setProjectData(project_data)
-
-            }
-            catch (error) {
-                console.error("Error Fetching Data:", error)
-            }
-        };
-        fetchData();
-
-    }, [])
-    */
 
     // Attempt #2 at the more efficient useEffect function
     useEffect(() => {
         const fetchData = async () => {
             try {
+                console.log("The fetchData function is running.")
                 const peoplePromise = await fetch('/api/people')
                 const taskPromise = await fetch('/api/tasks')
                 const projectPromise = await fetch('/api/projects')
@@ -54,10 +24,23 @@ export default function TasksPage() {
 
                 Promise.allSettled(promises).then((results) => 
                     results.forEach((result) => {
-                        const promise = result.value.json()
-                        promise.then(data => console.log(data))
-                    }
-                    )
+                            const promise = result.value.json()
+                            promise.then(data => {
+                                // updates the state depending on the nature of the data
+                                if ('firstName' in data[0]) {
+                                    console.log("The function has found the people data.")
+                                    setPeopleData(data)
+                                } else if ('projectId' in data[0]) {
+                                    console.log("The function has found the project data.")
+                                    setProjectData(data)
+                                } else if ('taskId' in data[0]) {
+                                    console.log("The function has found the task data.")
+                                    setTaskData(data)
+                                } else {
+                                    console.error("Dataset could not be determined.")
+                                }
+                            })
+                        })
                 )
             } 
             catch (error) {
@@ -66,12 +49,6 @@ export default function TasksPage() {
         };
         fetchData();
     }, [])
-
-    return <p>This is the tasks page.</p>
-
-}
-
-    /* The rest of the actual code starts here!
 
     // converting people data and project data to arrays
     let peopleArray = [];
@@ -103,24 +80,25 @@ export default function TasksPage() {
         newTaskData.push(newTask)
     }
 
-    //sets the new data to taskData (state variable)
-    setTaskData(newTaskData)
+    console.log(newTaskData)
 
-    const taskComponents = taskData.map((task) => <TaskCard
+    //sets the new data to taskData (state variable)
+
+    const taskComponents = newTaskData.map((task) => <TaskCard
         key={task.taskId}
         taskId={task.taskId}
         description={task.description}
-        completionStatus={task.completionStatus}
+        completionStatus={task.completionStatus ? "true" : "false"}
         personAssigned={task.personAssigned}
         dueDate={task.dueDate}
         estimatedComplexity={task.estimatedComplexity}
+        projectAssigned={task.projectAssigned}
     />)
     return (
         <>
-            <p>I am the tasks page for all tasks.</p>
+        <div id="task-wrapper">
             {taskComponents}
+        </div>
         </>
     )
 }
-
-*/ // This is the end of the large section of code commented out.
