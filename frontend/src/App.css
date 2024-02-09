@@ -15,6 +15,11 @@
     --link-accent-color: #003557;
     --focus-color: rgba(0,145,235, 0.4);
 
+    --incomplete: #ff8080;
+    --incomplete-text: #911d1d;
+    --complete: #afe0b1;
+    --complete-text: #3b613c;
+
     --idCard-multiplier: 4;
 }
 
@@ -157,6 +162,12 @@ header {
     font-style: italic;
 }
 
+/* Wrapper for the outlet */
+#outlet-wrapper {
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
 
 
 /* Project Card */
@@ -289,20 +300,75 @@ header {
 
 /* Task Styles */
 .task-card {
-    border: 2px solid black;
-    border-radius: 0.1875rem;
-    padding: 0.5rem;
+    border: 5px solid black;
+    border-radius: 5px;
     min-width: 500px;
     width: calc(40% - 20px);
     max-width: 600px;
+    box-shadow: 0px 0px 10px grey;
+
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    grid-template-rows: 1fr 3fr 2fr;
+    grid-template-areas: 
+        "title state"
+        "description description"
+        "info info";
+}
+
+.task-completion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 3px solid black;
+}
+
+.task-title {
+    grid-area: title;
+    padding: 5px 10px;
+    border-bottom: 3px solid black;
+}
+
+.task-description {
+    grid-area: description;
+    padding: 10px;
+}
+
+.task-info {
+    grid-area: info;
+    border-top: 3px solid black;
+    background-color: lightgrey;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task-form {
+    align-self: right;
+    display: flex;
+    align-items: center;
+
 }
 
 .task-complete {
-    background-color: green;
+    background-color: var(--complete);
 }
 
 .task-not-complete {
-    background-color: lightcoral;
+    background-color:  var(--incomplete);
+}
+
+.task-complete-status {
+    background-color: var(--complete);
+    color: var(--complete-text);
+}
+
+.task-not-complete-status {
+    background-color: var(--incomplete);
+    color: var(--incomplete-text);
 }
 
 #task-wrapper {

@@ -17,19 +17,19 @@ export default function App() {
   return (
     <>
       <header>
-      <Header />
-      <ul id="nav-bar">
-        <NavLink name={'home'} path=""/>
-        <NavLink name={'about'} path="about"/>
-        <NavLink name={'projects'} path="projects"/>
-        <NavLink name={'tasks'} path="tasks"/>
-        <NavLink name={'people'} path="people" />
-        <NavLink name={'login'} path="login"/>
-      </ul>
-
+        <Header />
+        <ul id="nav-bar">
+          <NavLink name={'home'} path=""/>
+          <NavLink name={'about'} path="about"/>
+          <NavLink name={'projects'} path="projects"/>
+          <NavLink name={'tasks'} path="tasks"/>
+          <NavLink name={'people'} path="people" />
+          <NavLink name={'login'} path="login"/>
+        </ul>
       </header>
-
-      <Outlet />
+      <div id="outlet-wrapper">
+        <Outlet />
+      </div>
       <Footer />
 
     </>
